@@ -1,5 +1,7 @@
 package main
 
+//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -target bpf hello hello.c
+
 import (
 	"context"
 	"log"

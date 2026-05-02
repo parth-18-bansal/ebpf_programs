@@ -13,7 +13,7 @@ struct {
     __uint(type, BPF_MAP_TYPE_HASH);
     __uint(max_entries, 16384);
     __type(key, struct path_key);
-    __type(value, __u64)
+    __type(value, __u64);
 
 } exec_count SEC(".maps");
 
