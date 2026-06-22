@@ -1,4 +1,7 @@
-#include <vmlinux.h>
+//  #inclue "" means search the header file in the current dir and #include <> means search the 
+// header file in the system so it is for the standard library headers
+
+#include "vmlinux.h"
 #include <bpf/bpf_helpers.h>
 
 // here const means that value can not be change by the program itself like int x = 5 and later x = 6 
@@ -27,7 +30,7 @@ char __license[] SEC("license") = "GPL";
 
 // if(pid_target)  is equal to the if (pid_target != 0)
 
-SEC("tracepoint/syscalls/sys_enter_opennat")
+SEC("tracepoint/syscalls/sys_enter_openat")
 int tracepoint__syscalls__sys_enter_openat(struct trace_event_raw_sys_enter* ctx)
 {
     u64 id = bpf_get_current_pid_tgid();
